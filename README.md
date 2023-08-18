@@ -63,13 +63,15 @@ $ rosrun yolopoint demo_ROS.py src/configs/kitti_inference.yaml ros '/image/mess
 $ rosrun yolopoint demo_ROS_listener.py '/image/message/name'
 ```
 
-## Evaluation HPatches
+## Evaluation HPatches (TODO)
 ```
 $ python evaluation_hpatches.py
 ```
 
 ## TODOs
 - [x] Add argument parser to demo.py (config + config-->track_points)
-- [ ] Add setup.py
 - [ ] Check that export_homography.py works out of the box
 - [ ] Write full evaluation pipeline for HPatches
+- [ ] Add file structure to docs
+- [ ] Add full example on how to export keypoints and train on COCO
+- [ ] Add nice looking image to readme
