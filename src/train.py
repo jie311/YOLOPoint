@@ -59,7 +59,7 @@ class TrainAgent:
         self.best = False
 
         # Init network
-        self.names = self.config['names']
+        self.names = self.config['data']['names']
         if 'dontcare' in (name.lower() for name in self.names):
             assert self.names[-1].lower() == 'dontcare', 'DontCare class must be at the end of the class list or else labels' \
                                                  'will get mixed up!'
