@@ -22,6 +22,19 @@ Prior to training, you must configure accelerate with:
 $ accelerate config
 ```
 
+## Data Organization
+To save time during data loading, images are resized and saved such that height or width are divisible by 32.
+```
+YOLOPoint/
+├── datasets/
+│   ├── coco/
+│   │   ├── images480/
+│   │   │    ├── train/
+│   │   │    └── val/
+│   │   └── labels/
+│   │        ├── train/
+│   │        └── val/
+```
 ## Training
 1. Adjust your config files as needed before launching the training script.
 2. Use provided weights to generate pseudo-ground truth keypoint labels:
@@ -63,15 +76,9 @@ $ rosrun yolopoint demo_ROS.py src/configs/kitti_inference.yaml ros '/image/mess
 $ rosrun yolopoint demo_ROS_listener.py '/image/message/name'
 ```
 
-## Evaluation HPatches (TODO)
+## Evaluation HPatches
+Example for evaluating homography estimation:
 ```
-$ python evaluation_hpatches.py
+$ python export_homography.py --config configs/hpatches.yaml
+$ python evaluation_hpatches.py path/to/weights.pt -homo
 ```
-
-## TODOs
-- [x] Add argument parser to demo.py (config + config-->track_points)
-- [ ] Check that export_homography.py works out of the box
-- [ ] Write full evaluation pipeline for HPatches
-- [ ] Add file structure to docs
-- [ ] Add full example on how to export keypoints and train on COCO
-- [ ] Add nice looking image to readme
