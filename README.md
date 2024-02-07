@@ -1,7 +1,7 @@
 # YOLOPoint
 Joint Keypoint and Object Detection
 
-This is a complimentary repository to our paper [YOLOPoint](arxiv here).
+This is a complimentary repository to our paper [YOLOPoint](https://arxiv.org/abs/2402.03989).
 The code is built on top of [pytorch-superpoint](https://github.com/eric-yyjau/pytorch-superpoint) and [YOLOv5](https://github.com/ultralytics/yolov5).
 
 ![example_output](figures/0011.gif "Removing keypoints on dynamic objects")
